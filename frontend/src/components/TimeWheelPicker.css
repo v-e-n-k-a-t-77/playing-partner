@@ -1,0 +1,82 @@
+.time-wheel-picker {
+  margin-bottom: 16px;
+}
+
+.time-wheel-picker label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1A1D22;
+  margin-bottom: 8px;
+}
+
+.wheel-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: #FAF8F3;
+  border: 1.5px solid #E3E0D8;
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+
+.wheel-colon {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1A1D22;
+}
+
+.wheel-outer {
+  position: relative;
+  width: 60px;
+  height: 120px;
+  overflow: hidden;
+}
+
+.wheel-highlight {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: #1A1D22;
+  border-radius: 6px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.wheel-scroll {
+  height: 120px;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.wheel-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.wheel-pad {
+  height: 40px;
+}
+
+.wheel-item {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #A8ACB3;
+  scroll-snap-align: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 0.15s ease;
+}
+
+.wheel-item.active {
+  color: #D4FF3F;
+  font-weight: 700;
+}

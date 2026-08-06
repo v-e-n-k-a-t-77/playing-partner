@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap');
+
+.view-players-page {
+  min-height: 100vh;
+  background: #FAF8F3;
+}
+
+.view-players-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  border-bottom: 1px solid #E3E0D8;
+}
+
+.brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  color: #1A1D22;
+}
+
+.view-players-nav a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1A1D22;
+  text-decoration: none;
+}
+
+.view-players-nav a:hover {
+  color: #FF4E32;
+}
+
+.view-players-main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #FF4E32;
+  margin-bottom: 16px;
+}
+
+.view-players-main h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1A1D22;
+  margin: 0 0 8px 0;
+}
+
+.subtext {
+  color: #6B7078;
+  font-size: 15px;
+  margin: 0 0 28px 0;
+}
+
+.ground-search-wrap {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.ground-search-wrap label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1A1D22;
+  margin-bottom: 6px;
+}
+
+.ground-search-wrap input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid #E3E0D8;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+}
+
+.ground-search-wrap input:focus {
+  outline: none;
+  border-color: #1A1D22;
+}
+
+.ground-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1.5px solid #E3E0D8;
+  border-radius: 8px;
+  margin-top: 4px;
+  list-style: none;
+  padding: 0;
+  z-index: 10;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.ground-results li {
+  padding: 12px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.ground-results li:hover {
+  background: #FAF8F3;
+}
+
+.ground-results li.no-results {
+  color: #A8ACB3;
+  cursor: default;
+}
+
+.msg.error {
+  color: #FF4E32;
+  font-size: 13px;
+}
+
+.loading-text,
+.no-sessions-msg {
+  font-size: 14px;
+  color: #6B7078;
+  margin-top: 16px;
+}
+
+.slots-container {
+  margin-top: 28px;
+}
+
+.slot-section {
+  margin-bottom: 28px;
+}
+
+.slot-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.03em;
+  color: #1A1D22;
+  border-bottom: 2px solid #D4FF3F;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.slot-empty {
+  font-size: 13px;
+  color: #A8ACB3;
+  font-style: italic;
+}
+
+.player-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.player-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #fff;
+  border: 1.5px solid #E3E0D8;
+  border-radius: 10px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.1s ease;
+}
+
+.player-row:hover {
+  border-color: #1A1D22;
+  transform: translateY(-1px);
+}
+
+.player-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1A1D22;
+  margin: 0;
+}
+
+.player-position {
+  font-size: 11px;
+  font-weight: 700;
+  color: #FF4E32;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.player-time {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6B7078;
+  margin: 0;
+}
+
+/* PROFILE MODAL */
+.profile-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(14, 17, 22, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.profile-modal {
+  background: #FAF8F3;
+  border-radius: 16px;
+  padding: 28px;
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.profile-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #6B7078;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.profile-modal-close:hover {
+  color: #1A1D22;
+}
+
+.modal-player-card {
+  background: #0E1116;
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.modal-player-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+.modal-player-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  color: #FAF8F3;
+  margin: 4px 0 10px 0;
+  line-height: 1;
+}
+
+.modal-position-tag {
+  display: inline-block;
+  background: #D4FF3F;
+  color: #0E1116;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 4px 10px;
+  border-radius: 100px;
+  text-transform: uppercase;
+}
+
+.modal-jersey {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  color: rgba(255,255,255,0.2);
+}
+
+.modal-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.modal-stat-box {
+  background: #fff;
+  border: 1.5px solid #E3E0D8;
+  border-radius: 10px;
+  padding: 14px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.modal-stat-box.highlight {
+  background: #1A1D22;
+  border-color: #1A1D22;
+}
+
+.modal-stat-value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  color: #1A1D22;
+}
+
+.modal-stat-box.highlight .modal-stat-value {
+  color: #D4FF3F;
+}
+
+.modal-stat-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #A8ACB3;
+  margin-top: 4px;
+}
+
+.modal-stat-box.highlight .modal-stat-label {
+  color: rgba(255,255,255,0.35);
+}
+
+.modal-info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #E3E0D8;
+  font-size: 13px;
+}
+
+.modal-info-row span {
+  color: #6B7078;
+}
+
+.modal-info-row strong {
+  color: #1A1D22;
+}
+.ground-results li.highlighted {
+  background: #1A1D22;
+  color: #D4FF3F;
+}

@@ -1,0 +1,94 @@
+.add-ground-page {
+  min-height: 100vh;
+  background: #FAF8F3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.add-ground-card {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border: 1.5px solid #E3E0D8;
+  border-radius: 12px;
+  padding: 36px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #FF4E32;
+  margin-bottom: 16px;
+}
+
+.add-ground-card h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1A1D22;
+  margin: 0 0 8px 0;
+}
+
+.subtext {
+  color: #6B7078;
+  font-size: 14px;
+  margin: 0 0 24px 0;
+}
+
+.field {
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.field-row {
+  display: flex;
+  gap: 14px;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1A1D22;
+  margin-bottom: 6px;
+}
+
+.field input {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1.5px solid #E3E0D8;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #1A1D22;
+}
+
+.msg {
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.msg.success { color: #1a7a3c; }
+.msg.error { color: #FF4E32; }
+
+button[type='submit'] {
+  width: 100%;
+  padding: 13px;
+  background: #1A1D22;
+  color: #D4FF3F;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button[type='submit']:hover {
+  background: #000;
+}

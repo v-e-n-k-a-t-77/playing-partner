@@ -1,0 +1,35 @@
+.switch-auth {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #6B7078;
+  text-align: center;
+}
+
+.switch-auth a {
+  color: #1A1D22;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1.5px solid #D4FF3F;
+}
+
+.switch-auth a:hover {
+  color: #FF4E32;
+  border-bottom-color: #FF4E32;
+}
+
+.eyebrow{
+  color: blue
+}
+
+.register-page{
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background-color:lightcoral;
+  background-image: 
+   
+    url(/image.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}

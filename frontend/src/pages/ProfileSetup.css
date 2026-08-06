@@ -1,0 +1,117 @@
+.profile-setup-page {
+  min-height: 100vh;
+  background: #FAF8F3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.profile-setup-card {
+  width: 100%;
+  max-width: 480px;
+  background: #fff;
+  border: 1.5px solid #E3E0D8;
+  border-radius: 12px;
+  padding: 40px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #FF4E32;
+  margin-bottom: 16px;
+}
+
+.profile-setup-card h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1A1D22;
+  margin: 0 0 8px 0;
+}
+
+.subtext {
+  color: #6B7078;
+  font-size: 14px;
+  margin: 0 0 28px 0;
+}
+
+.field {
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.field-row {
+  display: flex;
+  gap: 16px;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1A1D22;
+  margin-bottom: 6px;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1.5px solid #E3E0D8;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: #1A1D22;
+}
+
+.bmi-display {
+  background: #FAF8F3;
+  border: 1px solid #E3E0D8;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #1A1D22;
+  margin-bottom: 16px;
+}
+
+.bmi-display strong {
+  color: #FF4E32;
+}
+
+.msg.error {
+  color: #FF4E32;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+button[type='submit'] {
+  width: 100%;
+  padding: 13px;
+  background: #1A1D22;
+  color: #D4FF3F;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+button[type='submit']:hover {
+  background: #000;
+}
+
+button[type='submit']:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

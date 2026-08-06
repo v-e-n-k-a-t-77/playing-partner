@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.login-page {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background-color: #FAF8F3;
+  background-image: 
+    linear-gradient(rgba(250, 248, 243, 0.85), rgba(250, 248, 243, 0.85)),
+    url(/image.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.login-form-side {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.form-wrap {
+  width: 100%;
+  max-width: 380px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #FF4E32;
+  margin-bottom: 16px;
+}
+
+.form-wrap h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1A1D22;
+  margin: 0 0 8px 0;
+}
+
+.subtext {
+  color: #6B7078;
+  font-size: 15px;
+  margin: 0 0 32px 0;
+}
+
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1A1D22;
+  margin-bottom: 6px;
+}
+
+.field input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #E3E0D8;
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #1A1D22;
+}
+
+button[type='submit'] {
+  width: 100%;
+  padding: 14px;
+  background: #1A1D22;
+  color: #D4FF3F;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+button[type='submit']:hover {
+  background: #000;
+}
+
+.msg.error {
+  color: #FF4E32;
+  margin-top: 16px;
+  font-size: 14px;
+}
