@@ -63,8 +63,8 @@ router.post('/login', async (req, res) => {
 
     res.cookie('refreshToken', refreshToken, {
       httpOnly: true,
-      secure: false,
-      sameSite: 'strict',
+      secure: true,
+      sameSite: 'none',
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
@@ -109,7 +109,11 @@ router.post('/logout', async (req, res) => {
   const refreshToken = req.cookies.refreshToken;
   try {
     await pool.query('DELETE FROM refresh_tokens WHERE token = $1', [refreshToken]);
-    res.clearCookie('refreshToken');
+    res.clearCookie('refreshToken', {
+  httpOnly: true,
+  secure: true,
+  sameSite: 'none',
+});
     res.json({ message: 'Logged out' });
   } catch (err) {
     console.error(err);

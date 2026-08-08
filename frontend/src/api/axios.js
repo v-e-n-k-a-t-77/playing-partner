@@ -34,7 +34,7 @@ api.interceptors.response.use(
       originalRequest._retry = true;
       try {
         const res = await axios.post(
-          'http://localhost:5000/api/auth/refresh',
+          'https://playing-partner.onrender.com/api/auth/refresh',
           {},
           { withCredentials: true }
         );
