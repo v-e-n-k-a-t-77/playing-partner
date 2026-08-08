@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 import api, { setAccessToken as setAxiosToken, setOnTokenRefreshed } from '../api/axios';
 
 const AuthContext = createContext();
@@ -16,11 +16,7 @@ export function AuthProvider({ children }) {
 
     const restoreSession = async () => {
       try {
-        const refreshRes = await axios.post(
-          '/api/auth/refresh',
-          {},
-          { withCredentials: true }
-        );
+     const refreshRes = await api.post('/auth/refresh');
         const newToken = refreshRes.data.accessToken;
 
         setAxiosToken(newToken);
