@@ -17,7 +17,7 @@ export function AuthProvider({ children }) {
     const restoreSession = async () => {
       try {
         const refreshRes = await axios.post(
-          'http://localhost:5000/api/auth/refresh',
+          '/api/auth/refresh',
           {},
           { withCredentials: true }
         );

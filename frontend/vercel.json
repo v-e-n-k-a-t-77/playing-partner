@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://playing-partner-api.onrender.com/api/:path*"
+    }
+  ]
+}
