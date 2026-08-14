@@ -5,6 +5,7 @@ import EditPlayModal from '../components/EditPlayModal';
 import './Home.css';
 import { Link, useNavigate } from 'react-router-dom';
 
+
 function Home() {
   const { user, logout } = useAuth();
   const [weather, setWeather] = useState(null);
@@ -13,6 +14,7 @@ function Home() {
   const [myPlays, setMyPlays] = useState([]);
   const [editingSession, setEditingSession] = useState(null);
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -74,13 +76,26 @@ function Home() {
 
   return (
     <div className="home-page">
-      <nav className="home-nav">
-        <span className="brand">Playing Partner</span>
-        <div className="nav-links">
-          <Link to="/dashboard">Dashboard</Link>
-          <button className="logout-btn" onClick={logout}>Log out</button>
-        </div>
-      </nav>
+     <nav className="home-nav">
+  <button
+    className="hamburger-btn"
+    onClick={function () { setMenuOpen(!menuOpen); }}
+    aria-label="Menu"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <span className="brand">Playing Partner</span>
+
+  {menuOpen && (
+    <div className="dropdown-menu" onClick={function () { setMenuOpen(false); }}>
+      <Link to="/dashboard" className="dropdown-item">Dashboard</Link>
+      <button className="dropdown-item logout-item" onClick={logout}>Log out</button>
+    </div>
+  )}
+</nav>
 
       <main className="home-main">
         <span className="eyebrow">Home</span>
