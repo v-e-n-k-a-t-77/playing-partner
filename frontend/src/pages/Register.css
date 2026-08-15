@@ -42,7 +42,7 @@
     linear-gradient(rgba(20, 30, 45, 0.7), rgba(20, 30, 45, 0.7)), /* Dark tint overlay */
     url("/brand-logo.png");
   background-repeat: no-repeat;
-  background-size: 100% 100%;     /* Keeps logo proportional without stretching */
+  background-size: 100% 100%s;     /* Keeps logo proportional without stretching */
   background-position: center;  /* Centers logo on screen */
   
   filter: brightness(0.8);      /* 👈 Dims ONLY the background image */
