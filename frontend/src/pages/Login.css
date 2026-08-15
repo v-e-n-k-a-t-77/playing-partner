@@ -13,7 +13,7 @@
 background-image: url("/login-bg2.jpg");
 background-repeat: no-repeat;
 background-size :contain;
-background-position: -3.5cm;
+background-position: -150px center ;
 
 
 }
@@ -37,19 +37,19 @@ background-position: -3.5cm;
 .login-form-side::before {
   content: '';
   position: absolute;
-  top: -25px;                      /* Adjust vertical placement */
-  left: 450px;                      /* Horizontal centering */
+  top: -25px;
+  left: 450px;
   transform: translateX(-50%);
-  
-  width: 870px;                     /* Image width */
-  height:400px;                    /* Image height */
-  
+
+  width: 400px;      /* equal width and height = true circle */
+  height: 400px;
+
   background-image: url("/brand-logo.png");
   background-repeat: no-repeat;
-  background-size: 105% 100%;
+  background-size: cover;   /* single value = preserves proportions, no distortion */
   background-position: center;
-  
-  border-radius: 100%;            /* 👈 Rounds the logo image corners */
+
+  border-radius: 50%;    /* 50% is the standard value for a perfect circle, not 100% */
   overflow: hidden;
 }
 
@@ -163,7 +163,7 @@ display: block;             /* 👈 CRITICAL: Allows width, margins, & padding t
   background:  #da9191;
 }
 @media (max-width: 768px) {
-  .login-page::before {
+  .login-form-side::before {
     display: none;
   }
 
