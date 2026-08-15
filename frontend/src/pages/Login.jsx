@@ -36,8 +36,8 @@ function Login() {
     <div className="login-page">
       <div className="login-form-side">
         <div className="form-wrap">
-         
-          <h1>hi dude</h1>
+      
+          <h1>hi dude !!!</h1>
           <p className="subtext">Log in to find your next match</p>
 
           <form onSubmit={handleSubmit}>

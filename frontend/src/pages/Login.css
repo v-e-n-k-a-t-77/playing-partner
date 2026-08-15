@@ -5,47 +5,54 @@
   position: relative;          /* 👈 Anchor for virtual left image box */
   display: flex;
   min-height: 100vh;
-  font-family: 'Inter', sans-serif;
+  
   background-color: #FAF8F3;
-  overflow: hidden;
-background-color: #da9191;
- 
+  
+  width: 100%;
+
+background-image: url("/login-bg2.jpg");
+background-repeat: no-repeat;
+background-size :contain;
+background-position: -3.5cm;
+
+
 }
 
-/* 🖼️ Creates a virtual left container strictly for the image */
-.login-page::before {
-  content: '';
-  position: absolute;
-  top: -54px;
-  left: -100px;
-  width: calc(105% - 500px);   /* 👈 Takes up all remaining space to the left of form */
-  height: 120%;
-  background-image: 
-    linear-gradient(rgba(250, 248, 243, 0.1), rgba(250, 248, 243, 0.1)),
-    url('/image.png');
-   
-  background-size: contain;       /* 👈 Now resizes relative ONLY to the left visible box! */
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
+/* 1. Cleaned up main panel */
 .login-form-side {
-  position: relative;          /* Keeps form above pseudo-element layer */
+  position: relative;
   z-index: 1;
-  width: 1000px;                /* 👈 Fixed right panel width */
+  width: 890px;
   min-width: 320px;
-  margin-left: auto;           /* Pushes form to far right */
+  margin-left: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
-  background: #FAF8F3;
-  background-image:  linear-gradient(rgba(250, 248, 243, 0.1), rgba(250, 248, 243, 0.1));
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
- 
+  padding-left: 40px;
+  padding-top: 350px;
+  background-color: #ecf5ec;
 }
+
+/* 2. Dedicated image box with rounded corners */
+.login-form-side::before {
+  content: '';
+  position: absolute;
+  top: -25px;                      /* Adjust vertical placement */
+  left: 450px;                      /* Horizontal centering */
+  transform: translateX(-50%);
+  
+  width: 870px;                     /* Image width */
+  height:400px;                    /* Image height */
+  
+  background-image: url("/brand-logo.png");
+  background-repeat: no-repeat;
+  background-size: 105% 100%;
+  background-position: center;
+  
+  border-radius: 100%;            /* 👈 Rounds the logo image corners */
+  overflow: hidden;
+}
+
 .form-wrap {
   width: 100%;
   max-width: 380px;
@@ -59,15 +66,18 @@ background-color: #da9191;
   font-size: 60px; 
   font-family: "Rubik Spray Paint", system-ui;       /* 👈 Slightly reduced (was 32px) so long titles fit nicely */
   font-weight: 100;
-  color: #328325;
+  color: #21318c;
   margin-top: 0;
   margin-bottom: 4px;     /* 👈 Increases space below the h1 to separate it cleanly */
 }
 
 p.subtext {
-  color: #17495d;
+  color: #7e3445e7;
   font-size: 25px;
   margin: 0 0 32px 0;
+  font-weight: bolder;
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
 }
 
 .field {
@@ -102,8 +112,8 @@ p.subtext {
 .login-button[type='submit'] {
   width: 40%;
   padding: 10px 24px;
-  background: rgb(211, 209, 209);
-  color: #060606;
+  background: rgb(203, 128, 137);
+  color: #0d0d0d;
   border: none;
   border-radius: 6px;
   font-size: 20px;
@@ -130,7 +140,7 @@ p.msg.error {
   margin-top: 60px;
   font-size: 22px;
   font-weight:bolder;
-  color: #a23541;
+  color: #144a16;
 
 }
 .signup-button{
@@ -138,7 +148,7 @@ display: block;             /* 👈 CRITICAL: Allows width, margins, & padding t
   box-sizing: border-box;
   width: 60%;
   padding: 10px 24px;
-  background: rgb(211, 209, 209);
+  background: rgb(203, 128, 137);
   color: #060606;
   border: none;
   border-radius: 6px;

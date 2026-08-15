@@ -36,7 +36,6 @@ function Register() {
     <div className="register-page">
       <div className="register-form-side">
         <div className="form-wrap">
-          <span className="eyebrow">Playing Partner</span>
           <h1>Create your account</h1>
           <p className="subtext">Find someone to play with. Takes a minute.</p>
 
