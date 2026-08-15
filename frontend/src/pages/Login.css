@@ -40,7 +40,7 @@ background-color: #da9191;
   justify-content: center;
   padding: 40px;
   background: #FAF8F3;
-  background-image:  linear-gradient(rgba(250, 248, 243, 0.1), rgba(250, 248, 243, 0.1)),url('/login-bg.jpg');
+  background-image:  linear-gradient(rgba(250, 248, 243, 0.1), rgba(250, 248, 243, 0.1));
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
