@@ -1,24 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap');
 
+/* BASE STYLES — apply to ALL screen sizes by default */
 .login-page {
-  position: relative;          /* 👈 Anchor for virtual left image box */
+  position: relative;
   display: flex;
   min-height: 100vh;
-  
   background-color: #FAF8F3;
-  
   width: 100%;
-
-background-image: url("/login-bg2.jpg");
-background-repeat: no-repeat;
-background-size :contain;
-background-position: -150px center ;
-
-
+  background-image: url("/login-bg2.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: -150px center;
 }
 
-/* 1. Cleaned up main panel */
 .login-form-side {
   position: relative;
   z-index: 1;
@@ -33,23 +28,19 @@ background-position: -150px center ;
   background-color: #ecf5ec;
 }
 
-/* 2. Dedicated image box with rounded corners */
 .login-form-side::before {
   content: '';
   position: absolute;
   top: -25px;
   left: 450px;
   transform: translateX(-50%);
-
-  width: 400px;      /* equal width and height = true circle */
+  width: 400px;
   height: 400px;
-
   background-image: url("/brand-logo.png");
   background-repeat: no-repeat;
-  background-size: cover;   /* single value = preserves proportions, no distortion */
+  background-size: cover;
   background-position: center;
-
-  border-radius: 50%;    /* 50% is the standard value for a perfect circle, not 100% */
+  border-radius: 50%;
   overflow: hidden;
 }
 
@@ -59,16 +50,15 @@ background-position: -150px center ;
   justify-content: left;
 }
 
-
 .form-wrap h1 {
-  display: block;          /* 👈 Forces heading onto its own separate block line */
-  white-space: nowrap;     /* 👈 Prevents text from breaking into multiple lines */
-  font-size: 60px; 
-  font-family: "Rubik Spray Paint", system-ui;       /* 👈 Slightly reduced (was 32px) so long titles fit nicely */
+  display: block;
+  white-space: nowrap;
+  font-size: 60px;
+  font-family: "Rubik Spray Paint", system-ui;
   font-weight: 100;
   color: #21318c;
   margin-top: 0;
-  margin-bottom: 4px;     /* 👈 Increases space below the h1 to separate it cleanly */
+  margin-bottom: 4px;
 }
 
 p.subtext {
@@ -82,7 +72,6 @@ p.subtext {
 
 .field {
   margin-bottom: 18px;
-  
 }
 
 .field.field label {
@@ -91,7 +80,7 @@ p.subtext {
   font-weight: 600;
   color: #1A1D22;
   margin-bottom: 6px;
-  font-style:italic;
+  font-style: italic;
 }
 
 .field.field input {
@@ -132,19 +121,20 @@ p.msg.error {
   margin-top: 16px;
   font-size: 20px;
   background-color: #f40f0f;
-  width:70%;
+  width: 70%;
   padding: 2px;
   margin-left: 50px;
 }
-.switch-auth{
+
+.switch-auth {
   margin-top: 60px;
   font-size: 22px;
-  font-weight:bolder;
+  font-weight: bolder;
   color: #144a16;
-
 }
-.signup-button{
-display: block;             /* 👈 CRITICAL: Allows width, margins, & padding to work on <Link> */
+
+.signup-button {
+  display: block;
   box-sizing: border-box;
   width: 60%;
   padding: 10px 24px;
@@ -154,14 +144,17 @@ display: block;             /* 👈 CRITICAL: Allows width, margins, & padding t
   border-radius: 6px;
   font-size: 20px;
   font-weight: 700;
-  text-decoration: none;      /* 👈 Removes the underline from <Link> */
-  text-align: center;         /* Centers text inside the link button */
+  text-decoration: none;
+  text-align: center;
   cursor: pointer;
   margin: 15px auto 0 auto;
 }
+
 .signup-button:hover {
-  background:  #da9191;
+  background: #da9191;
 }
+
+/* MOBILE OVERRIDES — only what needs to CHANGE for small screens */
 @media (max-width: 768px) {
   .login-form-side::before {
     display: none;
@@ -221,5 +214,12 @@ display: block;             /* 👈 CRITICAL: Allows width, margins, & padding t
   .signup-button {
     width: 100%;
     font-size: 16px;
+  }
+}
+
+/* LARGE SCREEN OVERRIDE — only what needs to CHANGE for very wide screens */
+@media (min-width: 1920px) {
+  .login-page {
+    background-position: -200px center;   /* adjust the one thing that differs at this size */
   }
 }
