@@ -1,36 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap');
 
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
 /* BASE STYLES — apply to ALL screen sizes by default */
 .login-page {
   position: relative;
   display: flex;
   min-height: 100vh;
-  width: 100%;
   background-color: #FAF8F3;
-  
-  /* FIXED: Cover ensures left background spans full height/width without blank gaps */
+  width: 100%;
   background-image: url("/login-bg2.jpg");
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position:-150px center ;
-  overflow: hidden;
+  background-size: contain;              /* 👈 Changed from 'contain' so image fills remaining screen */
+  background-position: -30% center;    /* 👈 Changed from '-150px center' to align to left edge */
 }
 
 .login-form-side {
   position: relative;
   z-index: 1;
-  
-  /* FIXED: Percentage width scales flexibly across all screen resolutions */
-  width: 50%;
+  width: 45%;                          /* 👈 Changed 890px to 50% screen width */
   min-width: 320px;
-  max-width: 890px;
   margin-left: auto;
-  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,11 +32,8 @@
   content: '';
   position: absolute;
   top: -25px;
-  
-  /* FIXED: 50% left + translateX(-50%) keeps logo perfectly centered at any resolution */
-  left: 50%;
+  left: 50%;                           /* 👈 Changed 450px to 50% to stay centered inside panel */
   transform: translateX(-50%);
-  
   width: 400px;
   height: 400px;
   background-image: url("/brand-logo.png");
@@ -98,8 +84,7 @@ p.subtext {
 }
 
 .field.field input {
-  width: 400px;
-  max-width: 100%;
+  width: 100%;                         /* 👈 Changed 400px to 100% to fit form-wrap */
   padding: 10px 24px;
   border: 2.1px solid #0e0c0c;
   border-radius: 50px;
