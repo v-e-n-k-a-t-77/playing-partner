@@ -1,25 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap');
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 /* BASE STYLES — apply to ALL screen sizes by default */
 .login-page {
   position: relative;
   display: flex;
   min-height: 100vh;
-  background-color: #FAF8F3;
   width: 100%;
+  background-color: #FAF8F3;
+  
+  /* FIXED: Cover ensures left background spans full height/width without blank gaps */
   background-image: url("/login-bg2.jpg");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: -150px center;
+  background-position:-150px center ;
+  overflow: hidden;
 }
 
 .login-form-side {
   position: relative;
   z-index: 1;
-  width: 890px;
+  
+  /* FIXED: Percentage width scales flexibly across all screen resolutions */
+  width: 50%;
   min-width: 320px;
+  max-width: 890px;
   margin-left: auto;
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,8 +43,11 @@
   content: '';
   position: absolute;
   top: -25px;
-  left: 450px;
+  
+  /* FIXED: 50% left + translateX(-50%) keeps logo perfectly centered at any resolution */
+  left: 50%;
   transform: translateX(-50%);
+  
   width: 400px;
   height: 400px;
   background-image: url("/brand-logo.png");
@@ -85,6 +99,7 @@ p.subtext {
 
 .field.field input {
   width: 400px;
+  max-width: 100%;
   padding: 10px 24px;
   border: 2.1px solid #0e0c0c;
   border-radius: 50px;
@@ -214,12 +229,5 @@ p.msg.error {
   .signup-button {
     width: 100%;
     font-size: 16px;
-  }
-}
-
-/* LARGE SCREEN OVERRIDE — only what needs to CHANGE for very wide screens */
-@media (min-width: 1920px) {
-  .login-page {
-    background-position: -200px center;   /* adjust the one thing that differs at this size */
   }
 }
