@@ -1,56 +1,222 @@
-/* --- Switch Auth Link Styles (Untouched) --- */
-.switch-auth {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #6B7078;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-.switch-auth a {
-  color: #1A1D22;
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 1.5px solid #D4FF3F;
-  transition: color 0.2s ease, border-color 0.2s ease; /* Smooth hover transition */
-}
-
-.switch-auth a:hover {
-  color: #FF4E32;
-  border-bottom-color: #FF4E32;
-}
-
-/* --- Register Page Main Container --- */
+/* MAIN CONTAINER — 100vh Full Screen Split */
 .register-page {
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 100vh;
   width: 100%;
-  font-family: 'Inter', sans-serif;
-  background-color: #141E2D; /* Dark navy base color */
   overflow: hidden;
+  background-color: #ecf5ec;
 }
 
-/* 🖼️ Background Logo Layer (Dims ONLY the background image, NOT your form/text) */
-.register-page::before {
+/* RIGHT SIDE (50%) — Marketing Image created via CSS */
+.register-page::after {
   content: '';
   position: absolute;
-  inset: 0;                    /* Fills top:0, left:0, right:0, bottom:0 */
-  
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
   background-image: 
-    linear-gradient(rgba(20, 30, 45, 0.7), rgba(20, 30, 45, 0.7)), /* Dark tint overlay */
+    linear-gradient(rgba(20, 30, 45, 0.1), rgba(20, 30, 45, 0.1)),
     url("/brand-logo.png");
   background-repeat: no-repeat;
-  background-size: 100% 100%s;     /* Keeps logo proportional without stretching */
-  background-position: center;  /* Centers logo on screen */
-  
-  filter: brightness(0.8);      /* 👈 Dims ONLY the background image */
+  background-size: contain;
+  background-position: center;
+  filter: brightness(1);
   z-index: 0;
 }
 
-/* 📝 Keep form content crisp & interactive above background */
-.register-page > * {
+/* LEFT SIDE (50%) — Form Container */
+.register-form-side {
   position: relative;
-  z-index: 1;                   /* Pushes form above the dimmed background */
+  z-index: 1;
+  width: 50%;
+  min-height: 100vh;
+  background-color: #ecf5ec;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  padding: 40px 30px;
+}
+
+.register-form-wrap {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-form-wrap form {
+  width: 100%;
+}
+
+/* TYPOGRAPHY */
+.register-form-wrap h1 {
+  display: block;
+  font-size: 44px;
+  font-family: "Rubik Spray Paint", system-ui;
+  font-weight: 100;
+  color: #21318c;
+  margin-top: 0;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+p.register-subtext {
+  color: #7e3445e7;
+  font-size: 20px;
+  margin: 0 0 24px 0;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+  text-align: center;
+}
+
+/* FORM FIELDS */
+.register-field {
+  margin-bottom: 14px;
+  width: 100%;
+}
+
+.register-field label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1A1D22;
+  margin-bottom: 4px;
+  font-style: italic;
+  font-family: 'Inter', sans-serif;
+}
+
+.register-field input {
+  width: 100%;
+  padding: 10px 18px;
+  border: 2.1px solid #0e0c0c;
+  border-radius: 50px;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.register-field input:focus {
+  outline: none;
+  border-color: #d17088;
+}
+
+/* SUBMIT BUTTON */
+.register-form-wrap button[type='submit'] {
+  width: 65%;
+  padding: 10px 20px;
+  background: rgb(203, 128, 137);
+  color: #0d0d0d;
+  border: none;
+  border-radius: 6px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 16px auto 0 auto;
+  display: block;
+  transition: background 0.2s ease;
+}
+
+.register-form-wrap button[type='submit']:hover {
+  background: #da9191;
+}
+
+/* MESSAGES */
+p.register-msg {
+  width: 100%;
+  margin-top: 14px;
+  padding: 8px 12px;
+  font-size: 15px;
+  border-radius: 6px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+p.register-msg.success {
+  background-color: #2e7d32;
+  color: white;
+}
+
+p.register-msg.error {
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+/* SWITCH AUTH / LOGIN LINK */
+.register-switch-auth {
+  margin-top: 24px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #144a16;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.register-switch-auth a {
+  color: #7e3445e7;
+  font-weight: 700;
+  text-decoration: underline;
+  margin-left: 4px;
+  transition: color 0.2s ease;
+}
+
+.register-switch-auth a:hover {
+  color: #da9191;
+}
+
+/* MOBILE RESPONSIVE OVERRIDES */
+@media (max-width: 768px) {
+  .register-page::after {
+    display: none; /* Hides image on mobile screens so form takes 100% width */
+  }
+
+  .register-form-side {
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px 20px;
+  }
+
+  .register-form-wrap h1 {
+    font-size: 32px;
+  }
+
+  p.register-subtext {
+    font-size: 16px;
+    margin-bottom: 18px;
+  }
+
+  .register-field label {
+    font-size: 14px;
+  }
+
+  .register-field input {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .register-form-wrap button[type='submit'] {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .register-switch-auth {
+    font-size: 15px;
+    margin-top: 18px;
+  }
 }

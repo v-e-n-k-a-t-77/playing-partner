@@ -35,12 +35,12 @@ function Register() {
   return (
     <div className="register-page">
       <div className="register-form-side">
-        <div className="form-wrap">
+        <div className="register-form-wrap">
           <h1>Create your account</h1>
-          <p className="subtext">Find someone to play with. Takes a minute.</p>
+          <p className="register-subtext">Find someone to play with. Takes a minute.</p>
 
           <form onSubmit={handleSubmit}>
-            <div className="field">
+            <div className="register-field">
               <label>Name</label>
               <input
                 type="text"
@@ -51,7 +51,7 @@ function Register() {
                 required
               />
             </div>
-            <div className="field">
+            <div className="register-field">
               <label>Email</label>
               <input
                 type="email"
@@ -62,7 +62,7 @@ function Register() {
                 required
               />
             </div>
-            <div className="field">
+            <div className="register-field">
               <label>Password</label>
               <input
                 type="password"
@@ -76,10 +76,10 @@ function Register() {
             <button type="submit">Sign up</button>
           </form>
 
-          {message && <p className="msg success" >{message}</p>}
-          {error && <p className="msg error" style={{backgroundColor:'blue'}}>{error}</p>}
+          {message && <p className="register-msg success" >{message}</p>}
+          {error && <p className="register-msg error" style={{backgroundColor:'blue'}}>{error}</p>}
 
-          <p className="switch-auth">
+          <p className="register-switch-auth">
             Already have an account? <Link to="/login">Log in</Link>
           </p>
         </div>
