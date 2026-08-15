@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../api/axios';
 import './ProfileSetup.css';
+import { useAuth } from '../context/AuthContext';
 
 function ProfileSetup() {
   const navigate = useNavigate();
+  const { setHasProfile } = useAuth();
   const [formData, setFormData] = useState({
     profileName: '',
     heightCm: '',
@@ -31,20 +33,20 @@ function ProfileSetup() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError('');
-    setSubmitting(true);
+  e.preventDefault();
+  setError('');
+  setSubmitting(true);
 
-    try {
-      await api.post('/profile', formData);
-      navigate('/',{replace:true});
-    } catch (err) {
-      setError(err.response?.data?.message || 'Could not save profile');
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
+  try {
+    await api.post('/profile', formData);
+    setHasProfile(true);
+    navigate('/');
+  } catch (err) {
+    setError(err.response?.data?.message || 'Could not save profile');
+  } finally {
+    setSubmitting(false);
+  }
+};
   return (
     <div className="profile-setup-page">
       <div className="profile-setup-card">

@@ -1,5 +1,4 @@
 import { createContext, useContext, useState, useEffect } from 'react';
-//import axios from 'axios';
 import api, { setAccessToken as setAxiosToken, setOnTokenRefreshed } from '../api/axios';
 
 const AuthContext = createContext();
@@ -7,17 +6,26 @@ const AuthContext = createContext();
 export function AuthProvider({ children }) {
   const [accessToken, setAccessTokenState] = useState(null);
   const [user, setUser] = useState(null);
+  const [hasProfile, setHasProfile] = useState(false);
   const [loading, setLoading] = useState(true);
+
+  const checkProfile = async () => {
+    try {
+      await api.get('/profile/me');
+      setHasProfile(true);
+    } catch (err) {
+      setHasProfile(false);
+    }
+  };
 
   useEffect(() => {
     setOnTokenRefreshed((newToken) => {
       setAccessTokenState(newToken);
     });
 
-    
     const restoreSession = async () => {
       try {
-     const refreshRes = await api.post('/auth/refresh');
+        const refreshRes = await api.post('/auth/refresh');
         const newToken = refreshRes.data.accessToken;
 
         setAxiosToken(newToken);
@@ -25,9 +33,12 @@ export function AuthProvider({ children }) {
 
         const meRes = await api.get('/auth/me');
         setUser(meRes.data.user);
+
+        await checkProfile();
       } catch (err) {
         setAccessTokenState(null);
         setUser(null);
+        setHasProfile(false);
       } finally {
         setLoading(false);
       }
@@ -41,6 +52,7 @@ export function AuthProvider({ children }) {
     setAccessTokenState(res.data.accessToken);
     setAxiosToken(res.data.accessToken);
     setUser(res.data.user);
+    await checkProfile();
     return res.data;
   };
 
@@ -54,11 +66,14 @@ export function AuthProvider({ children }) {
     setAccessTokenState(null);
     setAxiosToken(null);
     setUser(null);
+    setHasProfile(false);
   };
 
   const value = {
     accessToken,
     user,
+    hasProfile,
+    setHasProfile,
     login,
     register,
     logout,

@@ -12,9 +12,10 @@ function Home() {
   const [weatherError, setWeatherError] = useState('');
   const [profile, setProfile] = useState(null);
   const [myPlays, setMyPlays] = useState([]);
-  const [editingSession, setEditingSession] = useState(null);
-  const navigate = useNavigate();
+  const [editingSession, setEditingSession] = useState(null); 
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+ 
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -87,7 +88,7 @@ function Home() {
     <span></span>
   </button>
 
-  <span className="brand">Playing Partner</span>
+  <span className="brand">Play Partner</span>
 
   {menuOpen && (
     <div className="dropdown-menu" onClick={function () { setMenuOpen(false); }}>

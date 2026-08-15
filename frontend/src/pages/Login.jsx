@@ -36,9 +36,9 @@ function Login() {
     <div className="login-page">
       <div className="login-form-side">
         <div className="form-wrap">
-          <span className="eyebrow">Playing Partner</span>
-          <h1>Welcome back</h1>
-          <p className="subtext">Log in to find your next match.</p>
+         
+          <h1>hi dude</h1>
+          <p className="subtext">Log in to find your next match</p>
 
           <form onSubmit={handleSubmit}>
             <div className="field">
@@ -48,7 +48,7 @@ function Login() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="you@example.com"
+                placeholder="name@gmail.com"
                 required
               />
             </div>
@@ -63,14 +63,14 @@ function Login() {
                 required
               />
             </div>
-            <button type="submit">Log in</button>
+            <button className="login-button"type="submit">LOG IN</button>
           </form>
 
           {error && <p className="msg error">{error}</p>}
 
           <p className="switch-auth">
-            Don't have an account? <Link to="/register">Sign up</Link>
-          </p>
+            Don't have an account? Create One </p> <Link className="signup-button" to="/register">SIGN IN</Link>
+        
         </div>
       </div>
     </div>

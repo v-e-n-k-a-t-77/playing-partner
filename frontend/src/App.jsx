@@ -18,13 +18,13 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route
-          path="/profile-setup"
-          element={
-            <ProtectedRoute>
-              <ProfileSetup />
-            </ProtectedRoute>
-          }
-        />
+  path="/profile-setup"
+  element={
+    <ProtectedRoute requireProfile={false}>
+      <ProfileSetup />
+    </ProtectedRoute>
+  }
+/>
         <Route
           path="/"
           element={

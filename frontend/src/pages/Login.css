@@ -1,100 +1,154 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap');
 
 .login-page {
+  position: relative;          /* 👈 Anchor for virtual left image box */
   display: flex;
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
   background-color: #FAF8F3;
+  overflow: hidden;
+background-color: #da9191;
+ 
+}
+
+/* 🖼️ Creates a virtual left container strictly for the image */
+.login-page::before {
+  content: '';
+  position: absolute;
+  top: -54px;
+  left: -100px;
+  width: calc(105% - 500px);   /* 👈 Takes up all remaining space to the left of form */
+  height: 120%;
   background-image: 
-    linear-gradient(rgba(250, 248, 243, 0.85), rgba(250, 248, 243, 0.85)),
-    url(/image.png);
-  background-size: cover;
+    linear-gradient(rgba(250, 248, 243, 0.1), rgba(250, 248, 243, 0.1)),
+    url('/image.png');
+   
+  background-size: contain;       /* 👈 Now resizes relative ONLY to the left visible box! */
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .login-form-side {
-  width: 100%;
+  position: relative;          /* Keeps form above pseudo-element layer */
+  z-index: 1;
+  width: 1000px;                /* 👈 Fixed right panel width */
+  min-width: 320px;
+  margin-left: auto;           /* Pushes form to far right */
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px;
+  background: #FAF8F3;
+  background-image:  linear-gradient(rgba(250, 248, 243, 0.1), rgba(250, 248, 243, 0.1)),url('/login-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+ 
 }
-
 .form-wrap {
   width: 100%;
   max-width: 380px;
+  justify-content: left;
 }
 
-.eyebrow {
-  display: inline-block;
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #FF4E32;
-  margin-bottom: 16px;
-}
 
 .form-wrap h1 {
-  font-size: 32px;
-  font-weight: 700;
-  color: #1A1D22;
-  margin: 0 0 8px 0;
+  display: block;          /* 👈 Forces heading onto its own separate block line */
+  white-space: nowrap;     /* 👈 Prevents text from breaking into multiple lines */
+  font-size: 60px; 
+  font-family: "Rubik Spray Paint", system-ui;       /* 👈 Slightly reduced (was 32px) so long titles fit nicely */
+  font-weight: 100;
+  color: #328325;
+  margin-top: 0;
+  margin-bottom: 4px;     /* 👈 Increases space below the h1 to separate it cleanly */
 }
 
-.subtext {
-  color: #6B7078;
-  font-size: 15px;
+p.subtext {
+  color: #17495d;
+  font-size: 25px;
   margin: 0 0 32px 0;
 }
 
 .field {
   margin-bottom: 18px;
+  
 }
 
-.field label {
+.field.field label {
   display: block;
-  font-size: 13px;
+  font-size: 20px;
   font-weight: 600;
   color: #1A1D22;
   margin-bottom: 6px;
+  font-style:italic;
 }
 
-.field input {
-  width: 100%;
-  padding: 12px 14px;
-  border: 1.5px solid #E3E0D8;
-  border-radius: 6px;
-  font-size: 15px;
+.field.field input {
+  width: 400px;
+  padding: 10px 24px;
+  border: 2.1px solid #0e0c0c;
+  border-radius: 50px;
+  font-size: 20px;
   font-family: 'Inter', sans-serif;
   background: #fff;
 }
 
-.field input:focus {
+.field.field input:focus {
   outline: none;
-  border-color: #1A1D22;
+  border-color: #d17088;
 }
 
-button[type='submit'] {
-  width: 100%;
-  padding: 14px;
-  background: #1A1D22;
-  color: #D4FF3F;
+.login-button[type='submit'] {
+  width: 40%;
+  padding: 10px 24px;
+  background: rgb(211, 209, 209);
+  color: #060606;
   border: none;
   border-radius: 6px;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 700;
   cursor: pointer;
-  margin-top: 8px;
+  margin-top: 20px;
+  margin-left: 125px;
 }
 
-button[type='submit']:hover {
-  background: #000;
+.login-button[type='submit']:hover {
+  background: #da9191;
 }
 
-.msg.error {
-  color: #FF4E32;
+p.msg.error {
+  color: white;
   margin-top: 16px;
-  font-size: 14px;
+  font-size: 20px;
+  background-color: #f40f0f;
+  width:70%;
+  padding: 2px;
+  margin-left: 50px;
+}
+.switch-auth{
+  margin-top: 60px;
+  font-size: 22px;
+  font-weight:bolder;
+  color: #a23541;
+
+}
+.signup-button{
+display: block;             /* 👈 CRITICAL: Allows width, margins, & padding to work on <Link> */
+  box-sizing: border-box;
+  width: 60%;
+  padding: 10px 24px;
+  background: rgb(211, 209, 209);
+  color: #060606;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;      /* 👈 Removes the underline from <Link> */
+  text-align: center;         /* Centers text inside the link button */
+  cursor: pointer;
+  margin: 15px auto 0 auto;
+}
+.signup-button:hover {
+  background:  #da9191;
 }
